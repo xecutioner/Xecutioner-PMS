@@ -1,0 +1,15 @@
+# Read about fixtures at http://ar.rubyonrails.org/classes/Fixtures.html
+
+one:
+  title: MyString
+  deadline: 2011-03-28 14:10:30
+  objective: MyText
+  complete: false
+  comment: MyString
+
+two:
+  title: MyString
+  deadline: 2011-03-28 14:10:30
+  objective: MyText
+  complete: false
+  comment: MyString
