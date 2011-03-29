@@ -11,6 +11,6 @@ class TaskGroup < ActiveRecord::Base
   private
 
   def date_today
-    self.deadline = Date.today
+    self.deadline ||= DateTime.now
   end
 end

@@ -9,10 +9,16 @@ gem 'sqlite3'
 gem 'annotate'
 gem 'irbtools'
 gem 'formtastic'
-group :test do
+group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
   gem 'machinist', '>= 2.0.0.beta1'
+  gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
+  gem 'launchy'
+  gem 'database_cleaner'
+end
+group :development,:production do
+gem 'devise'
 end
 # Use unicorn as the web server
 # gem 'unicorn'

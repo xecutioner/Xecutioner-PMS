@@ -4,7 +4,9 @@ PMS::Application.routes.draw do
     resources :task_groups, :except => [:index, :show]
   end
 
-  resources :task_groups, :only => [:show,:edit,:destroy]
+  resources :task_groups, :only => [:show] do
+    resources :tasks
+  end
 
   # The priority is based upon order of creation:
   # first created -> highest priority.

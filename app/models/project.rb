@@ -5,4 +5,9 @@ class Project < ActiveRecord::Base
   validates :deadline,:presence =>true
   validates :description,:presence =>true
 
+  private
+
+  def date_today
+    self.deadline ||= Date.today
+  end
 end
