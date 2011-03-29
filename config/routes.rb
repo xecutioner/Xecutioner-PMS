@@ -1,5 +1,7 @@
 PMS::Application.routes.draw do
 
+  devise_for :people
+
   resources :projects do
     resources :task_groups, :except => [:index, :show]
   end

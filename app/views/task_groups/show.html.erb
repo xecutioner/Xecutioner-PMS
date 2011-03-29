@@ -1,1 +1,8 @@
 <%= display_task_group(@task_group) %>
+<%=link_to"Add a new Task",new_task_group_task_path(@task_group) %>
+<ul>
+  <% @task_group.tasks.each do |task| %>
+    <li><%= display_task(task) %></li>
+  <% end %>
+</ul>
+<%=link_to"<--Back",project_path(@task_group.project)%>

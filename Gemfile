@@ -17,8 +17,10 @@ group :development, :test do
   gem 'launchy'
   gem 'database_cleaner'
 end
-group :development,:production do
+
+group :test, :development,:production do
 gem 'devise'
+gem 'validates_timeliness', '~> 3.0.2'
 end
 # Use unicorn as the web server
 # gem 'unicorn'

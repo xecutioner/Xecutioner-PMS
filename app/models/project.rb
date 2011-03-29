@@ -4,10 +4,13 @@ class Project < ActiveRecord::Base
   validates :title,:presence => true, :length => {:minimum =>3}
   validates :deadline,:presence =>true
   validates :description,:presence =>true
+  validates_datetime :deadline, :on_or_after => DateTime.now
+
+  after_initialize :date_today
 
   private
 
   def date_today
-    self.deadline ||= Date.today
+    self.deadline ||= DateTime.now
   end
 end

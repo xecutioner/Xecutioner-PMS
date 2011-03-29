@@ -5,7 +5,7 @@ class TaskGroup < ActiveRecord::Base
   validates :title, :presence => true
   validates :objective, :presence => true
   validates :deadline, :presence => true
-
+  validates_datetime :deadline, :on_or_after => DateTime.now
   after_initialize :date_today
 
   private
