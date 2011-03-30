@@ -3,6 +3,7 @@
 <ul>
   <% @task_group.tasks.each do |task| %>
     <li><%= display_task(task) %></li>
+    <li></li>
   <% end %>
 </ul>
 <%=link_to"<--Back",project_path(@task_group.project)%>

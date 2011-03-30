@@ -9,6 +9,14 @@ class Task < ActiveRecord::Base
   before_create :default_values
   before_save :check_null_comment
 
+  def change_status
+    if self.complete == true
+      self.complete == false
+    else
+      self.complete == true
+    end
+  end
+
   private
 
   def date_today
@@ -23,5 +31,6 @@ class Task < ActiveRecord::Base
   def check_null_comment
     return true
   end
+
 
 end

@@ -14,6 +14,11 @@ class TasksController < ApplicationController
   end
 
   def show
+    puts params
+   @task_grp =TaskGroup.find(params[:task_group_id])
+   @task = @task_grp.tasks.find(params[:id])
+   @task.change_status
+   redirect_to(task_group_path(@task_grp))
   end
 
   def edit
@@ -27,16 +32,11 @@ class TasksController < ApplicationController
   def destroy
   end
 
+
   private
   def task_group
     @task_group ||= TaskGroup.find(params[:task_group_id])
   end
 
-  def change_status
-    if task_group.task.complete == true
-      task_group.task.complete == false
-    else
-      task_group.task.complete == true
-    end
-  end
+
 end
