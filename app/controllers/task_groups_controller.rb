@@ -3,6 +3,7 @@ class TaskGroupsController < ApplicationController
   def new
     @project = Project.find_by_id(params[:project_id])
     @task_group = @project.task_groups.new
+    @message = "Create a new task group for " + @project.title
   end
 
   def create

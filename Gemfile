@@ -9,6 +9,9 @@ gem 'sqlite3'
 gem 'annotate'
 gem 'irbtools'
 gem 'formtastic'
+gem 'devise'
+gem 'validates_timeliness', '~> 3.0.2'
+
 group :development, :test do
   gem 'rspec-rails'
   gem 'shoulda-matchers'
@@ -16,12 +19,14 @@ group :development, :test do
   gem 'capybara', :git => 'git://github.com/jnicklas/capybara.git'
   gem 'launchy'
   gem 'database_cleaner'
+  gem 'cucumber-rails'
+  gem 'ffaker'
 end
 
-group :test, :development,:production do
-gem 'devise'
-gem 'validates_timeliness', '~> 3.0.2'
+group :test do
+  gem 'ruby-debug19'
 end
+
 # Use unicorn as the web server
 # gem 'unicorn'
 

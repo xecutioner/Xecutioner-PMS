@@ -21,7 +21,15 @@ TaskGroup.blueprint do
 end
 
 Task.blueprint do
-  title { "Task Group Title"}
-  objective { "Objective For TaskGroup 1"}
+  title { "Task Title"}
+  objective { "Objective For 1"}
   deadline { "Thu, 31 Mar 2011 15:24:59 +0545" }
+  complete {true}
+  comment {nil}
 end
+
+Person.blueprint do
+  email { "a@a.com" }
+  password { "123456" }
+end
+

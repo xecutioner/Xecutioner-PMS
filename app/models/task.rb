@@ -17,16 +17,10 @@ class Task < ActiveRecord::Base
 
   def default_values
     self.complete = false
-    self.comment = ''
+    self.comment = nil
   end
 
   def check_null_comment
-    if self.complete == true
-      if self.comment.length == 0
-        self.complete = false
-        return false
-      end
-    end
     return true
   end
 

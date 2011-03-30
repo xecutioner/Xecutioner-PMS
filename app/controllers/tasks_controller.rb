@@ -31,4 +31,12 @@ class TasksController < ApplicationController
   def task_group
     @task_group ||= TaskGroup.find(params[:task_group_id])
   end
+
+  def change_status
+    if task_group.task.complete == true
+      task_group.task.complete == false
+    else
+      task_group.task.complete == true
+    end
+  end
 end
