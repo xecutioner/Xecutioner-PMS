@@ -27,6 +27,11 @@ class TasksController < ApplicationController
   end
 
   def update
+    @task = task_group.tasks.find(params[:id])
+    @task.update_attributes(params[:task])
+    @task.save
+    #render :text => params[:task].to_s
+    redirect_to task_group_path(task_group)
   end
 
   def destroy

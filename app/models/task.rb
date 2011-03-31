@@ -9,7 +9,7 @@ class Task < ActiveRecord::Base
   before_create :default_values
   before_save :check_null_comment
 
-  def change_status
+  def change_status #TODO- TOGGLE TASK STATUS USING THIS METHOD
     if self.complete == true
       self.complete == false
     else
@@ -25,10 +25,14 @@ class Task < ActiveRecord::Base
 
   def default_values
     self.complete = false
-    self.comment = nil
+    self.comment = ''
   end
 
   def check_null_comment
+    if self.complete == true && self.comment.length == 0
+      self.complete = false
+      return false, #TODO-Display:error => "Cannot Complete Without Comment"
+    end
     return true
   end
 

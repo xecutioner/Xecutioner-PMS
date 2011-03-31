@@ -13,6 +13,7 @@ class ProjectsController < ApplicationController
   def create
     @project = Project.new(params[:project])
     if @project.save
+      flash[:notice] = "Project Successfully Created"
       redirect_to projects_path
     else
       @message = "New Project"
