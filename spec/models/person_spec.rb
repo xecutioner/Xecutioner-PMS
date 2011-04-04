@@ -1,5 +1,9 @@
 require 'spec_helper'
 
 describe Person do
-  pending "add some examples to (or delete) #{__FILE__}"
+   before(:all) do
+    @person = Person.make!
+  end
+  it {should have_many(:tasks).through(:tasklist)}
 end
+

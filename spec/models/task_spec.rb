@@ -5,6 +5,7 @@ describe Task do
     @task = Task.make!
   end
   it { should belong_to :task_group }
+  it {should have_many :person}
   it { should validate_presence_of :title }
   it { should validate_presence_of :objective }
   it { should validate_presence_of :deadline }

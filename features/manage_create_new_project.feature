@@ -10,4 +10,3 @@ Feature: Manage create_new_project
     And I press "Create Project"
     Then I should see "Project Successfully Created"
 
-

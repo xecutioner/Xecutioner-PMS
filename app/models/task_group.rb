@@ -1,6 +1,7 @@
 class TaskGroup < ActiveRecord::Base
   belongs_to :project
   has_many :tasks
+  has_many :people
 
   validates :title, :presence => true
   validates :objective, :presence => true
@@ -14,3 +15,4 @@ class TaskGroup < ActiveRecord::Base
     self.deadline ||= DateTime.now
   end
 end
+

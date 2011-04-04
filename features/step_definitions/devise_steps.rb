@@ -5,3 +5,4 @@ Given /^I am authenticated$/ do
   fill_in "Password", :with => "qwerty"
   click_button "person_submit"
 end
+

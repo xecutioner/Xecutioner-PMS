@@ -207,6 +207,7 @@ DEPENDENCIES
   irbtools
   launchy
   machinist (>= 2.0.0.beta1)
+  nokogiri
   rails (= 3.0.5)
   rspec-rails
   ruby-debug19

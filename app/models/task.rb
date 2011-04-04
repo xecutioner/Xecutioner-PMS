@@ -1,5 +1,6 @@
 class Task < ActiveRecord::Base
   belongs_to :task_group
+  has_many :person,:through =>:tasklist
 
   validates :title, :presence => true
   validates :objective, :presence => true
@@ -38,3 +39,4 @@ class Task < ActiveRecord::Base
 
 
 end
+
